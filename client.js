@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let solutions = [];
     let currentSolutionIndex = 0;
     let countdown;
-    const gameDuration = 30; // Game duration in seconds
-    let gameStarted = false; // Flag to check if the game has started
+    const gameDuration = 30; 
+    let gameStarted = false; 
 
     const startTimer = () => {
         let timeLeft = gameDuration;
@@ -27,7 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
             timerDiv.textContent = `Time left: ${timeLeft}s`;
             if (timeLeft <= 0) {
                 clearInterval(countdown);
-                // Disable board interaction when time is up
                 disableBoard();
                 checkGameResult();
             }
@@ -208,5 +207,5 @@ document.addEventListener('DOMContentLoaded', () => {
         undoMove();
     });
 
-    createBoard(); // Initial board creation
+    createBoard(); 
 });
