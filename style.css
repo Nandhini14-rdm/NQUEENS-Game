@@ -10,6 +10,9 @@ body {
 
 #app {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #board {
@@ -20,6 +23,7 @@ body {
     border: 2px solid #000;
     box-sizing: border-box;
     width: fit-content;
+    justify-content: center;
 }
 
 .square {
@@ -53,6 +57,51 @@ body {
 #solutionsCount {
     margin-top: 20px;
     font-weight: bold;
+}
+
+#generateBoard{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: hwb(327 2% 64%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#showSolutions{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: hwb(258 3% 68%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#prevSolution{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: hwb(258 3% 68%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#nextSolution{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: hwb(258 3% 68%);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#undoMove{
+    margin-top: 5px;
+    padding: 5px;
+    background-color: hwb(258 3% 68%);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
 
 #gameResult {
