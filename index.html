@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N-Queens Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>N-Queens Problem</h1>
+        <input type="number" id="sizeInput" placeholder="Enter size (n)" min="4">
+        <button id="generateBoard">Generate Board</button>
+        <button id="showSolutions">Show Solutions</button>
+        <button id="prevSolution">Previous Solution</button>
+        <button id="nextSolution">Next Solution</button>
+        <button id="undoMove">Undo Move</button>
+        <div id="solutionsCount">Number of Solutions: 0</div>
+        <div id="timer">Time: 0s</div>
+        <div id="board"></div>
+    </div>
+    <script src="client.js"></script>
+</body>
+</html>
