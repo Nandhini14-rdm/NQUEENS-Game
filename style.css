@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #119fa4;
 }
 
 #app {
@@ -50,7 +50,18 @@ body {
     font-weight: bold;
 }
 
-#solutionsCount{
+#solutionsCount {
     margin-top: 20px;
-    font-weight:bold;
+    font-weight: bold;
+}
+
+#gameResult {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(7, 7, 7);
+}
+
+.hidden {
+    display: none;
 }
