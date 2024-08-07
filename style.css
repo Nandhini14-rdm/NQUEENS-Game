@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#app {
+    text-align: center;
+}
+
+#board {
+    display: grid;
+    gap: 0;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+.square {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border: 2px solid #000;
+}
+
+.dark {
+    background-color: hsl(30, 22%, 96%); /* Dark brown */
+}
+
+.light {
+    background-color: hsl(40, 20%, 97%); /* Light brown */
+}
+
+.queen {
+    background-image: url('queen.png'); /* Add a queen image in your project directory */
+    background-size: cover;
+    background-position: center;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#solutionsCount{
+    margin-top: 20px;
+    font-weight:bold;
+}
