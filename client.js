@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const undoMoveBtn = document.getElementById('undoMove');
     const solutionsCountDiv = document.getElementById('solutionsCount');
     const timerDiv = document.getElementById('timer');
+    const gameResultDiv = document.getElementById('gameResult');
 
     let n = 4;
     let queens = [];
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(countdown);
                 // Disable board interaction when time is up
                 disableBoard();
+                checkGameResult();
             }
         }, 1000);
     };
@@ -49,7 +51,9 @@ document.addEventListener('DOMContentLoaded', () => {
         solutions = [];
         currentSolutionIndex = 0;
         solutionsCountDiv.textContent = 'Number of Solutions: 0';
-        timerDiv.textContent = 'Time left: 0s';
+        timerDiv.textContent = 'Time left: 30s';
+        gameResultDiv.classList.add('hidden');
+        gameResultDiv.textContent = '';
     };
 
     const disableBoard = () => {
@@ -122,6 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 startTimer();
                 gameStarted = true;
             }
+            if (queens.filter(q => q !== -1).length === n) {
+                clearInterval(countdown);
+                disableBoard();
+                displayGameResult('You won!');
+            }
         }
     };
 
@@ -151,6 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
         solutionsCountDiv.textContent = `Number of Solutions: ${solutions.length}`;
     };
 
+    const displayGameResult = (message) => {
+        gameResultDiv.textContent = message;
+        gameResultDiv.classList.remove('hidden');
+    };
+
+    const checkGameResult = () => {
+        const allQueensPlaced = queens.filter(q => q !== -1).length === n;
+        if (allQueensPlaced) {
+            displayGameResult('You won!');
+        } else {
+            displayGameResult('You lose!');
+        }
+    };
+
     generateBoardBtn.addEventListener('click', () => {
         resetGame();
     });
@@ -160,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0) {
             currentSolutionIndex = 0;
             renderSolution();
-            stopTimer(); // Stop the timer when showing solutions
+            stopTimer();
         }
         updateSolutionsCount();
     });
@@ -169,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0 && currentSolutionIndex > 0) {
             currentSolutionIndex--;
             renderSolution();
-            stopTimer(); // Stop the timer when navigating solutions
+            stopTimer();
         }
     });
 
@@ -177,13 +200,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0 && currentSolutionIndex < solutions.length - 1) {
             currentSolutionIndex++;
             renderSolution();
-            stopTimer(); // Stop the timer when navigating solutions
+            stopTimer();
         }
     });
 
     undoMoveBtn.addEventListener('click', () => {
         undoMove();
-        // Do not stop the timer when undoing a move
     });
 
     createBoard(); // Initial board creation
