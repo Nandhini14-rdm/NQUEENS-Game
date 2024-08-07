@@ -35,15 +35,15 @@ body {
 }
 
 .dark {
-    background-color: hsl(30, 22%, 96%); /* Dark brown */
+    background-color: hsl(30, 22%, 96%); 
 }
 
 .light {
-    background-color: hsl(40, 20%, 97%); /* Light brown */
+    background-color: hsl(40, 20%, 97%); 
 }
 
 .queen {
-    background-image: url('queen.png'); /* Add a queen image in your project directory */
+    background-image: url('queen.png');
     background-size: cover;
     background-position: center;
 }
