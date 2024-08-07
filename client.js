@@ -160,6 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0) {
             currentSolutionIndex = 0;
             renderSolution();
+            stopTimer(); // Stop the timer when showing solutions
         }
         updateSolutionsCount();
     });
@@ -168,6 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0 && currentSolutionIndex > 0) {
             currentSolutionIndex--;
             renderSolution();
+            stopTimer(); // Stop the timer when navigating solutions
         }
     });
 
@@ -175,11 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (solutions.length > 0 && currentSolutionIndex < solutions.length - 1) {
             currentSolutionIndex++;
             renderSolution();
+            stopTimer(); // Stop the timer when navigating solutions
         }
     });
 
     undoMoveBtn.addEventListener('click', () => {
         undoMove();
+        // Do not stop the timer when undoing a move
     });
 
     createBoard(); // Initial board creation
